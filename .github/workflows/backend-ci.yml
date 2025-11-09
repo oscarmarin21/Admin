@@ -1,0 +1,50 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'backend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        working-directory: backend
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Lint
+        working-directory: backend
+        run: pnpm lint
+
+      - name: Test
+        working-directory: backend
+        env:
+          MONGODB_URI: mongodb://localhost:27017/test
+          ACCESS_TOKEN_PRIVATE_KEY: test-access
+          REFRESH_TOKEN_PRIVATE_KEY: test-refresh
+          SMTP_HOST: localhost
+          SMTP_PORT: 1025
+          SMTP_USER: test
+          SMTP_PASSWORD: test
+          APP_BASE_URL: http://localhost:5173
+        run: pnpm test
+

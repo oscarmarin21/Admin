@@ -1,0 +1,235 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# Archives and Package Backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.tbz
+*.rar
+*.7z
+
+# Logs and Runtime Data
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.swn
+*.sw?
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+vendor/
+dist/
+build/
+tmp/
+temp/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.angular/
+.vite/
+.expo/
+.yarn/
+.yarn/cache/
+.pnpm-store/
+vendor/bundle/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+pip-log.txt
+pip-delete-this-directory.txt
+celerybeat-schedule
+*.sage.py
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node / JavaScript
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.eslintcache
+.stylelintcache
+.tsbuildinfo
+
+# Ruby / Rails
+*.gem
+*.rbc
+.bundle/
+coverage/
+spec/reports/
+log/
+tmp/
+pkg/
+doc/
+.yardoc/
+_yardoc/
+.ruby-version
+.ruby-gemset
+
+# PHP / Composer
+composer.phar
+vendor/
+*.cache
+
+# Java / Kotlin
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.classpath
+.project
+.settings/
+out/
+target/
+.gradle/
+build/
+
+# Go
+bin/
+pkg/
+
+# Rust / Cargo
+target/
+Cargo.lock
+
+# Swift / Xcode
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.swiftpm/
+.build/
+
+# Android / Gradle
+.gradle/
+local.properties
+/.idea/caches/
+/.idea/libraries/
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+*.iml
+gradle-app.setting
+captures/
+.externalNativeBuild/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# Environment files and secrets
+*.env
+*.env.*
+!*.env.example
+!*.env.sample
+
+# IDE / Editor directories
+.idea/
+.vscode/
+.vs/
+*.code-workspace
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ansible
+*.retry
+
+# Coverage reports
+coverage/
+*.lcov
+*.gcov
+*.gcda
+*.gcno
+
+# Sentry CLI and cache
+.sentryclirc
+.sentrycli/
+
+# Miscellaneous
+*.orig
+*.rej
+*.bak
+*.old
+*.out
+*.lock
+
+
