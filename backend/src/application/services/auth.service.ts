@@ -81,7 +81,8 @@ export class AuthService {
   }
 
   public async signIn(input: SignInInput) {
-    const organization = await this.organizationRepository.findBySlug(input.organizationSlug);
+    const normalizedSlug = generateSlug(input.organizationSlug);
+    const organization = await this.organizationRepository.findBySlug(normalizedSlug);
     if (!organization) {
       throw createHttpError(404, 'Organization not found.');
     }
