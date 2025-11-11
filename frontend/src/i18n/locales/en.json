@@ -259,12 +259,26 @@
       },
       "tasks": {
         "title": "Tasks overview",
-        "caption": "Breakdown across all projects"
+        "caption": "Breakdown across all projects",
+        "completion": "Completion rate: {{rate}}%"
       },
       "meetings": {
         "title": "Upcoming meetings",
         "empty": "No upcoming meetings scheduled."
       }
+    }
+  },
+  "metrics": {
+    "project": {
+      "title": "Progress",
+      "loading": "Loading metrics…",
+      "error": "Metrics are not available right now.",
+      "completionCaption": "Completion rate for this project",
+      "completionLabel": "{{rate}}% completed",
+      "completionTooltip": "Completed tasks vs. total tasks in this project",
+      "total": "Total tasks",
+      "completed": "Completed",
+      "blocked": "Blocked"
     }
   },
   "invitations": {

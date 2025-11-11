@@ -259,12 +259,26 @@
       },
       "tasks": {
         "title": "Resumen de tareas",
-        "caption": "Distribución en todos los proyectos"
+        "caption": "Distribución en todos los proyectos",
+        "completion": "Tasa de finalización: {{rate}}%"
       },
       "meetings": {
         "title": "Reuniones próximas",
         "empty": "No hay reuniones programadas."
       }
+    }
+  },
+  "metrics": {
+    "project": {
+      "title": "Avance",
+      "loading": "Cargando métricas…",
+      "error": "No hay métricas disponibles por ahora.",
+      "completionCaption": "Tasa de finalización de este proyecto",
+      "completionLabel": "{{rate}}% completado",
+      "completionTooltip": "Tareas completadas vs. total de tareas en este proyecto",
+      "total": "Tareas totales",
+      "completed": "Completadas",
+      "blocked": "Bloqueadas"
     }
   },
   "invitations": {

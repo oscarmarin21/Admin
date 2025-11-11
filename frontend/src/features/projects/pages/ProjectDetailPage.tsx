@@ -28,6 +28,7 @@ import {
 import { useOrganizationMembersQuery } from '../../members/hooks';
 import { useAuthStore } from '../../auth/stores/auth.store';
 import type { ProjectInput, TaskInput, TaskStatus, Task } from '../types';
+import { ProjectMetricsSummary } from '../components/ProjectMetricsSummary';
 
 const projectSchema = z.object({
   name: z.string().min(3),
@@ -275,35 +276,38 @@ const ProjectDetailPage = (): JSX.Element => {
             </Button>
           </div>
 
-          <Card className="border border-slate-700 bg-slate-800/80 text-slate-100">
-            <dl className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <dt className="text-sm text-slate-400">{t('projects.fields.owner')}</dt>
-                <dd className="text-lg">
-                  {members?.find((member) => member.id === project.ownerId)
-                    ? `${members.find((member) => member.id === project.ownerId)?.firstName ?? ''} ${
-                        members?.find((member) => member.id === project.ownerId)?.lastName ?? ''
-                      }`
-                    : t('common.notSet')}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm text-slate-400">{t('projects.fields.dates')}</dt>
-                <dd className="text-lg">
-                  {[project.startDate, project.endDate]
-                    .filter(Boolean)
-                    .map((date) => (date ? new Date(date).toLocaleDateString() : ''))
-                    .join(' → ') || t('common.notSet')}
-                </dd>
-              </div>
-              <div className="sm:col-span-2">
-                <dt className="text-sm text-slate-400">{t('projects.fields.description')}</dt>
-                <dd className="text-sm text-slate-200">
-                  {project.description || t('common.notSet')}
-                </dd>
-              </div>
-            </dl>
-          </Card>
+          <div className="grid gap-4 lg:grid-cols-2">
+            <Card className="border border-slate-700 bg-slate-800/80 text-slate-100">
+              <dl className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <dt className="text-sm text-slate-400">{t('projects.fields.owner')}</dt>
+                  <dd className="text-lg">
+                    {members?.find((member) => member.id === project.ownerId)
+                      ? `${members.find((member) => member.id === project.ownerId)?.firstName ?? ''} ${
+                          members?.find((member) => member.id === project.ownerId)?.lastName ?? ''
+                        }`
+                      : t('common.notSet')}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-slate-400">{t('projects.fields.dates')}</dt>
+                  <dd className="text-lg">
+                    {[project.startDate, project.endDate]
+                      .filter(Boolean)
+                      .map((date) => (date ? new Date(date).toLocaleDateString() : ''))
+                      .join(' → ') || t('common.notSet')}
+                  </dd>
+                </div>
+                <div className="sm:col-span-2">
+                  <dt className="text-sm text-slate-400">{t('projects.fields.description')}</dt>
+                  <dd className="text-sm text-slate-200">
+                    {project.description || t('common.notSet')}
+                  </dd>
+                </div>
+              </dl>
+            </Card>
+            <ProjectMetricsSummary projectId={project.id} variant="card" />
+          </div>
 
           <section className="space-y-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

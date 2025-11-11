@@ -31,6 +31,7 @@ const DashboardPage = (): JSX.Element => {
     },
     { todo: 0, doing: 0, done: 0 },
   );
+  const completionRate = totalTasks === 0 ? 0 : Math.round((taskBreakdown.done / totalTasks) * 100);
 
   const upcomingMeetings = useMemo(() => {
     const now = new Date();
@@ -66,6 +67,9 @@ const DashboardPage = (): JSX.Element => {
               <Badge color="info">{t('taskStatus.doing')}: {taskBreakdown.doing}</Badge>
               <Badge color="success">{t('taskStatus.done')}: {taskBreakdown.done}</Badge>
             </div>
+            <p className="text-sm text-slate-300">
+              {t('dashboard.metrics.tasks.completion', { rate: completionRate })}
+            </p>
             <p className="text-xs text-slate-500">{t('dashboard.metrics.tasks.caption')}</p>
           </div>
         )}

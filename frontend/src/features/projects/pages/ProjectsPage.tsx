@@ -14,6 +14,7 @@ import {
 import type { Project, ProjectInput } from '../types';
 import { useOrganizationMembersQuery } from '../../members/hooks';
 import { useAuthStore } from '../../auth/stores/auth.store';
+import { ProjectMetricsSummary } from '../components/ProjectMetricsSummary';
 
 const projectSchema = z.object({
   name: z.string().min(3),
@@ -208,6 +209,9 @@ const ProjectsPage = (): JSX.Element => {
               {project.description && (
                 <p className="text-sm text-slate-300">{project.description}</p>
               )}
+              <div className="mt-2">
+                <ProjectMetricsSummary projectId={project.id} />
+              </div>
               <dl className="text-xs text-slate-400">
                 <div className="flex justify-between">
                   <dt>{t('projects.fields.owner')}</dt>
